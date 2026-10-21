@@ -2,6 +2,8 @@
 
 A cartoon arcade game made for a class partnered with [charity: water](https://www.charitywater.org). You guide a raindrop 10,000 feet down from the clouds. Bounce on clean clouds, dodge pollution, keep your drop pure, and land it in the clean well.
 
+**Play it here: https://jcwebst5.github.io/journey-of-a-drop/**
+
 ## How to play
 
 Open `index.html` in any modern browser. It runs on desktop, tablets and phones.
