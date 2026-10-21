@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- BUILD:HEAD START -->
+<title>Journey of a Drop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap">
+<!-- BUILD:HEAD END -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- BUILD:BODY START -->
+<main id="shell">
+
+    <canvas id="game" aria-label="Journey of a Drop game"></canvas>
+
+    <!-- HUD -->
+    <div id="hud" hidden>
+        <div class="chip" id="score-chip"><span id="score">0</span></div>
+        <div class="chip" id="purity-chip" title="Purity">
+            <i class="di"></i>
+            <div class="meter"><div id="purity-fill"></div></div>
+            <span id="purity-num">100%</span>
+        </div>
+        <div class="chip" id="alt-chip"><span id="alt">10,000</span><small>ft</small></div>
+        <button id="pause-btn" class="icon-btn" aria-label="Pause">II</button>
+    </div>
+    <div id="subhud" hidden>
+        <span class="chip mini" id="drops-chip"><i class="di"></i> <span id="drops">0</span></span>
+        <span class="sticker" id="combo" hidden>x2 combo</span>
+        <span class="chip mini power" id="power-shield" hidden>Shield <b></b></span>
+        <span class="chip mini power" id="power-magnet" hidden>Magnet <b></b></span>
+    </div>
+
+    <div id="banner" aria-live="polite"><strong id="banner-name">Cloud Kingdom</strong><span id="banner-tip"></span></div>
+    <div id="toast" aria-live="polite"></div>
+    <div id="touch-hint" hidden><span>hold left</span><span>hold right</span></div>
+
+    <!-- MENU -->
+    <section id="menu" class="screen">
+        <div class="card menu-card">
+            <div class="brand"><img src="assets/charity-water-logo.png" alt="charity: water" width="261" height="58"></div>
+            <p class="kicker">A clean water adventure</p>
+            <h1>Journey <span>of a</span> Drop</h1>
+            <p class="lede">Ride a raindrop 10,000 feet down. Bounce on clean clouds, dodge pollution and splash into the clean well.</p>
+            <button id="play-btn" class="btn big">Play</button>
+            <div class="row">
+                <button id="mute-btn" class="btn secondary" aria-pressed="false">Sound on</button>
+            </div>
+            <div class="row stats-row">
+                <span>Best <b id="best">0</b></span>
+            </div>
+            <div class="missions">
+                <h3>Missions</h3>
+                <ul id="mission-list"></ul>
+            </div>
+            <ul class="legend" id="legend"></ul>
+            <p class="keys">Steer with ← → or A / D. On a phone, hold the left or right side. P pauses.</p>
+        </div>
+    </section>
+
+    <!-- PAUSE -->
+    <section id="pause" class="screen dim" hidden>
+        <div class="card small-card">
+            <h2>Paused</h2>
+            <div class="col">
+                <button id="resume-btn" class="btn">Resume</button>
+                <button id="restart-btn" class="btn secondary">Restart</button>
+                <button id="mute-btn2" class="btn secondary" aria-pressed="false">Sound on</button>
+                <button id="quit-btn" class="btn secondary">Main menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- GAME OVER -->
+    <section id="over" class="screen dim" hidden>
+        <div class="card over-card">
+            <div class="brand over-brand" id="over-brand" hidden><img src="assets/charity-water-logo.png" alt="charity: water" width="261" height="58"></div>
+            <div id="new-best" class="sticker big-sticker" hidden>New best!</div>
+            <p class="kicker" id="over-kicker">Safe water reached</p>
+            <h2 id="over-title">Clean landing!</h2>
+            <p id="over-desc" class="lede"></p>
+            <dl class="stats">
+                <div><dt>Score</dt><dd id="o-score">0</dd></div>
+                <div><dt>Purity</dt><dd id="o-purity">100%</dd></div>
+                <div><dt>Droplets</dt><dd id="o-drops">0</dd></div>
+                <div><dt>Best</dt><dd id="o-best">0</dd></div>
+            </dl>
+            <ul id="o-breakdown" class="breakdown"></ul>
+            <div id="o-missions" class="missions"></div>
+            <p class="fact"><b>Water fact</b> <span id="o-fact"></span> <a class="brand-link" href="https://www.charitywater.org" target="_blank" rel="noopener">Help bring clean water at charitywater.org</a></p>
+            <div class="row">
+                <button id="again-btn" class="btn">Play again</button>
+                <button id="over-menu" class="btn secondary">Menu</button>
+            </div>
+        </div>
+    </section>
+
+</main>
+<!-- BUILD:BODY END -->
+<script src="script.js"></script>
+</body>
+</html>
